@@ -6,27 +6,150 @@
 
 <br/>
 
-<p align="center">
-  <a href="https://github.com/svod011929/invest-bot"><img src="https://img.shields.io/badge/GitHub-invest-bot-0D1117?style=for-the-badge&logo=github&logoColor=26A5E4" alt="repo" /></a>
-  &nbsp;
-  <a href="https://t.me/KodoDrive"><img src="https://img.shields.io/badge/Telegram-@KodoDrive-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="tg" /></a>
-  &nbsp;
-  <a href="https://github.com/svod011929"><img src="https://img.shields.io/badge/Author-svod011929-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="author" /></a>
-</p>
-
----
-
 <div align="center">
-  <img src="./assets/readme-about.svg" width="100%" alt="about" />
+  <img src="./assets/readme-meta.svg" width="100%" alt="meta" />
 </div>
 
 <br/>
 
+<p align="center">
+  <a href="https://github.com/svod011929/invest-bot"><img src="https://img.shields.io/badge/GitHub-invest-bot-0D1117?style=for-the-badge&logo=github&logoColor=26A5E4" alt="repo" /></a>
+  <a href="https://t.me/KodoDrive"><img src="https://img.shields.io/badge/Telegram-@KodoDrive-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="tg" /></a>
+  <a href="https://github.com/svod011929"><img src="https://img.shields.io/badge/Author-svod011929-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="author" /></a>
+</p>
+
+<!-- /kododrive-readme-style -->
+
+# 💰 KodoInvest Bot
+
 <div align="center">
-  <img src="./assets/readme-features.svg" width="100%" alt="features" />
+
+![Python](https://img.shields.io/badge/Python-3.10%2B-blue?style=for-the-badge&logo=python)
+![aiogram](https://img.shields.io/badge/aiogram-3.x-009688?style=for-the-badge)
+![SQLite](https://img.shields.io/badge/SQLite-aiosqlite-003B57?style=for-the-badge&logo=sqlite)
+![License](https://img.shields.io/badge/license-MIT-green?style=for-the-badge)
+
+**Telegram-бот инвестиционной платформы с играми, реферальной системой и интеграцией CryptoPay**
+
+[📢 Канал автора](https://t.me/KodoDriveBio) · [🐛 Issues](https://github.com/svod011929/issues) · [⭐ Star на GitHub](https://github.com/svod011929)
+
 </div>
 
 ---
+
+## 📋 Содержание
+
+- [Возможности](#-возможности)
+- [Стек технологий](#-стек-технологий)
+- [Структура проекта](#-структура-проекта)
+- [Быстрый старт](#-быстрый-старт)
+- [Конфигурация](#-конфигурация)
+- [Деплой на Pterodactyl](#-деплой-на-pterodactyl)
+- [Админ-панель](#-админ-панель)
+- [Автор](#-автор)
+
+---
+
+## ✨ Возможности
+
+### 💼 Инвестиции
+- 4 инвестиционных плана с разной доходностью (Бронза / Серебро / Золото / Платина)
+- Начисление прибыли каждый час через APScheduler
+- Автоматическое завершение вклада с выплатой
+
+### 💳 Платежи
+- Пополнение баланса через **CryptoPay** (USDT, TON, BTC, ETH, LTC)
+- Вывод средств напрямую через **CryptoPay Transfer** — мгновенно, без ручной обработки
+- Комиссия при выводе настраивается через админ-панель
+
+### 🎰 Игры
+| Игра | Описание |
+|------|----------|
+| 🪙 Орёл или Решка | Классика с настраиваемым множителем |
+| 🎲 Кости | Три режима: точное число (×5.5), высокое/низкое (×1.8) |
+| 💣 Шахты | Поле 5×5, выбор количества мин, cashout в любой момент |
+
+### 👥 Реферальная система
+- Уникальная реф-ссылка для каждого пользователя
+- Процент от прибыли рефералов (настраивается в админке)
+
+### 🎁 Ежедневный бонус
+- Бонус масштабируется в зависимости от ранга пользователя
+- 5 рангов: Новичок → Кит
+
+### 🔔 Уведомления
+- Уведомление о завершении вклада
+- Реферальные бонусы в реальном времени
+- Ежедневный отчёт о накопленной прибыли
+- Пользователь может отключить уведомления
+
+### 🛠 Админ-панель
+- Статистика бота
+- Поиск пользователя по Telegram ID
+- Ручное начисление/списание баланса
+- Бан/разбан
+- Рассылка с выбором форматирования (HTML / Markdown / текст)
+- **Полная настройка параметров бота через интерфейс** без изменения кода
+
+---
+
+## 🔧 Стек технологий
+
+| Компонент | Технология |
+|-----------|-----------|
+| Фреймворк | [aiogram 3.x](https://github.com/aiogram/aiogram) |
+| База данных | SQLite + [aiosqlite](https://github.com/omnilib/aiosqlite) |
+| HTTP-клиент | [aiohttp](https://github.com/aio-libs/aiohttp) |
+| Планировщик | [APScheduler](https://github.com/agronholm/apscheduler) |
+| Платежи | [CryptoPay API](https://help.crypt.bot/crypto-pay-api) |
+| Хостинг | Pterodactyl / любой VPS |
+
+---
+
+## 📁 Структура проекта
+
+```
+invest_bot/
+├── main.py                  # Точка входа, регистрация роутеров
+├── config.py                # Конфигурация и дефолтные значения
+├── requirements.txt
+├── .env.example             # Шаблон переменных окружения
+│
+├── database/
+│   └── db.py                # Все функции работы с БД
+│
+├── handlers/
+│   ├── start.py             # /start, профиль, бонус, история
+│   ├── invest.py            # Инвестиционные планы и вклады
+│   ├── payments.py          # Пополнение через CryptoPay
+│   ├── withdraw.py          # Вывод через CryptoPay Transfer
+│   ├── games.py             # Монета, Кости, Шахты
+│   ├── referral.py          # Реферальная программа
+│   └── admin.py             # Админ-панель
+│
+├── keyboards/
+│   └── kb.py                # Все клавиатуры (Reply + Inline)
+│
+├── middlewares/
+│   ├── ban.py               # Проверка бана перед каждым запросом
+│   └── reset_state.py       # Сброс FSM при нажатии кнопок меню
+│
+└── utils/
+    ├── cryptopay.py         # Обёртка над CryptoPay API
+    ├── scheduler.py         # Планировщик начислений и уведомлений
+    └── settings.py          # Динамическое чтение настроек из БД
+```
+
+---
+
+## 🚀 Быстрый старт
+
+### 1. Клонировать репозиторий
+
+```bash
+git clone https://github.com/svod011929/invest-bot.git
+cd invest-bot
+```
 
 ### 2. Установить зависимости
 
@@ -34,19 +157,89 @@
 pip install -r requirements.txt
 ```
 
+### 3. Настроить конфигурацию
+
+Открой `config.py` и заполни:
+
+```python
+BOT_TOKEN: str = "токен от @BotFather"
+ADMIN_IDS: List[int] = field(default_factory=lambda: [твой_telegram_id])
+CRYPTO_PAY_TOKEN: str = "токен от @CryptoBot"
+```
+
+> 💡 Свой Telegram ID можно узнать через [@userinfobot](https://t.me/userinfobot)  
+> 💡 CryptoPay токен: [@CryptoBot](https://t.me/CryptoBot) → Crypto Pay → Create App
+
+### 4. Запустить
+
+```bash
+python main.py
+```
+
 ---
 
-<div align="center">
-  <img src="./assets/readme-stack.svg" width="100%" alt="stack" />
-</div>
+## ⚙️ Конфигурация
 
-<br/>
+Все параметры задаются в `config.py` как дефолтные значения.  
+После первого запуска они копируются в БД и **меняются через админ-панель** (`/admin → ⚙️ Настройки`) без перезапуска бота.
 
-<div align="center">
-  <a href="https://t.me/KodoDrive"><img src="./assets/readme-cta.svg" width="100%" alt="contact" /></a>
-</div>
+| Параметр | Описание |
+|----------|----------|
+| `BOT_TOKEN` | Токен бота от @BotFather |
+| `ADMIN_IDS` | Список Telegram ID администраторов |
+| `CRYPTO_PAY_TOKEN` | Токен CryptoPay |
+| `PLANS` | Инвестиционные планы (% в день, мин. сумма, срок) |
+| `REFERRAL_PERCENT` | % реферального вознаграждения |
+| `DAILY_BONUS_USDT` | Размер ежедневного бонуса |
+| `COIN_FLIP_*` | Настройки игры «Монета» |
+| `DICE_*` | Настройки игры «Кости» |
+| `MINES_*` | Настройки игры «Шахты» |
+| `WITHDRAW_*` | Минимум и комиссия вывода |
 
-<!-- /kododrive-readme-style -->
+---
+
+## 🐦 Деплой на Pterodactyl
+
+1. Создай сервер с **Python egg**
+2. Загрузи файлы бота в `/home/container/invest_bot/`
+3. В настройках запуска укажи:
+   - **Startup command**: `python /home/container/invest_bot/main.py`
+   - **REQUIREMENTS_FILE**: `invest_bot/requirements.txt`
+4. Запусти сервер — зависимости установятся автоматически
+
+---
+
+## 🛠 Админ-панель
+
+Доступна по команде `/admin` (только для `ADMIN_IDS`).
+
+| Раздел | Возможности |
+|--------|-------------|
+| 📊 Статистика | Пользователи, активные вклады, оборот |
+| 👤 Найти пользователя | Профиль, баланс, бан/разбан, начисление |
+| 📢 Рассылка | HTML / Markdown V2 / plain text, прогресс отправки |
+| ⚙️ Настройки | Все параметры бота в реальном времени |
+
+### Настройки разбиты на разделы:
+- 📈 Инвестиционные планы — % в день, минималка, срок для каждого плана
+- 👥 Реферальная программа — процент вознаграждения
+- 🎁 Бонусы — размер ежедневного бонуса
+- 🎰 Игры — ставки и множители для всех игр
+- 📤 Вывод — минимум и комиссия
+
+---
+
+## 👤 Автор
+
+Разработано [@KodoDriveBio](https://t.me/KodoDriveBio)
+
+Подписывайся на канал — там выходят новые боты, кейсы и инструменты для разработчиков Telegram-ботов.
+
+---
+
+## 📄 Лицензия
+
+MIT License — используй свободно, но звёздочку не забудь ⭐
 
 ---
 
@@ -54,21 +247,21 @@ pip install -r requirements.txt
 
 ## Проекты KodoDrive
 
-Другие проекты: [профиль @svod011929](https://github.com/svod011929) · [Telegram](https://t.me/KodoDrive)
+Другие проекты автора: [профиль @svod011929](https://github.com/svod011929) · [Telegram](https://t.me/KodoDrive)
 
 ### VPN и инфраструктура
 
-- [BuryatVPN](https://github.com/svod011929/buryatvpn)
-- [VPN Server Installer](https://github.com/svod011929/vpn-server-installer)
+- [BuryatVPN — VPN-сервис + Telegram](https://github.com/svod011929/buryatvpn)
+- [VPN Server Installer — VLESS + TLS](https://github.com/svod011929/vpn-server-installer)
 - [3X-UI Auto Installer](https://github.com/svod011929/3x-ui-auto-installer)
-- [AWG Bot Installer](https://github.com/svod011929/awg-bot-installer)
+- [AWG Bot Installer — AmneziaWG](https://github.com/svod011929/awg-bot-installer)
 - [RemnaShop Installer](https://github.com/svod011929/remnashop-installer)
-- [VPN Auto Installer](https://github.com/svod011929/vpn-auto-installer)
-- [VPNHubBot](https://github.com/svod011929/VPNHubBot)
+- [VPN Auto Installer — панели](https://github.com/svod011929/vpn-auto-installer)
+- [VPNHubBot — Telegram VPN-бот](https://github.com/svod011929/VPNHubBot)
 
 ### Telegram и автоматизация
 
-- [KDS Server Panel](https://github.com/svod011929/KDS_Server_Panel)
+- [KDS Server Panel — SSH из Telegram](https://github.com/svod011929/KDS_Server_Panel)
 - [Telegram → VK Poster](https://github.com/svod011929/telegram-to-vk-poster)
 - [KDS Parser CryptoBot](https://github.com/svod011929/kds_parser_cryptobot)
 - [Auction Bot](https://github.com/svod011929/auction-bot)
@@ -84,8 +277,7 @@ pip install -r requirements.txt
 
 ### Сайты
 
-- [Portfolio](https://github.com/svod011929/kododrive-portfolio)
-- [GitHub Pages](https://github.com/svod011929/kododrive.github.io)
+- [KodoDrive Portfolio](https://github.com/svod011929/kododrive-portfolio)
+- [kododrive.github.io](https://github.com/svod011929/kododrive.github.io)
 
 <!-- /kododrive-projects-block -->
-
