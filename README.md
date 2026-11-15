@@ -14,7 +14,7 @@
 
 <p align="center">
   <a href="https://github.com/svod011929/invest-bot"><img src="https://img.shields.io/badge/GitHub-invest-bot-0D1117?style=for-the-badge&logo=github&logoColor=26A5E4" alt="repo" /></a>
-  <a href="https://t.me/gveom"><img src="https://img.shields.io/badge/Telegram-@gveom-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="tg" /></a>
+  <a href="https://t.me/DDDDEVELOPER"><img src="https://img.shields.io/badge/Telegram-@DDDDEVELOPER-26A5E4?style=for-the-badge&logo=telegram&logoColor=white" alt="tg" /></a>
   <a href="https://github.com/svod011929"><img src="https://img.shields.io/badge/Author-svod011929-7C3AED?style=for-the-badge&logo=github&logoColor=white" alt="author" /></a>
 </p>
 
@@ -247,7 +247,7 @@ MIT License — используй свободно, но звёздочку н�
 
 ## Проекты KodoDrive
 
-Другие проекты автора: [профиль @svod011929](https://github.com/svod011929) · [Telegram](https://t.me/gveom)
+Другие проекты автора: [профиль @svod011929](https://github.com/svod011929) · [Telegram](https://t.me/DDDDEVELOPER)
 
 ### VPN и инфраструктура
 
